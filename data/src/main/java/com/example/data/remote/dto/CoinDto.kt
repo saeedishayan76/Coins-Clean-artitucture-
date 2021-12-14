@@ -1,5 +1,6 @@
 package com.example.data.remote.dto
 
+import com.example.data.local.entity.CoinEntity
 import com.example.domain.model.Coin
 import com.google.gson.annotations.SerializedName
 
@@ -17,6 +18,17 @@ data class CoinDto(
 fun CoinDto.toCoin(): Coin {
 
     return Coin(
+        id = id,
+        isActive = isActive,
+        name = name,
+        rank = rank,
+        symbol = symbol
+    )
+}
+
+fun CoinDto.toCoinEntity(): CoinEntity {
+
+    return CoinEntity(
         id = id,
         isActive = isActive,
         name = name,
